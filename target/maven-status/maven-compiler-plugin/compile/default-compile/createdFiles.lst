@@ -1,0 +1,12 @@
+com\webapp\dao\UserDAOImpl.class
+com\webapp\config\ContactAppDispatcherServletInitializer.class
+com\webapp\dao\UserDAO.class
+com\webapp\rm\RowMapperImpl.class
+com\webapp\config\SpringRootConfig.class
+com\webapp\controller\TestController.class
+com\webapp\model\Contact.class
+com\webapp\model\User.class
+com\webapp\dao\BaseDAO.class
+com\webapp\dao\ContactDAOImpl.class
+com\webapp\dao\ContactDAO.class
+com\webapp\config\SpringWebConfig.class
