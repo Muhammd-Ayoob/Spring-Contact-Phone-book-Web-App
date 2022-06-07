@@ -7,6 +7,7 @@ package com.webapp.config;
 import com.webapp.dao.ContactDAOImpl;
 import com.webapp.dao.UserDAO;
 import com.webapp.dao.UserDAOImpl;
+import com.webapp.service.UserServiceImpl;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -71,4 +72,12 @@ public class SpringRootConfig {
 		
 		return daoImpl;
 	}
+        
+        
+        @Bean(name="userService")
+        public UserServiceImpl getUSerServiceImpl(){
+            UserServiceImpl impl= new UserServiceImpl();
+            
+            return impl;
+        }
 }
