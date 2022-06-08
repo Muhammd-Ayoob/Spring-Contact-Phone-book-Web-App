@@ -2,6 +2,7 @@
 package com.webapp.controller;
 
 import com.webapp.command.LoginCommand;
+import com.webapp.command.UserCommand;
 import com.webapp.exception.UserBlockedException;
 import com.webapp.model.User;
 import com.webapp.service.UserService;
@@ -78,7 +79,34 @@ public class UserController {
      @RequestMapping("/logout")
     public String logout(HttpSession session){
        session.invalidate();
-        return "redirect:index";
+        return "redirect:index?act=lo";
+    }
+    
+    @RequestMapping("/reg_form")
+    public String registerForm(Model model){
+        
+        model.addAttribute("command", new UserCommand());
+        return "reg_form";
+    }
+    
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public String register(@ModelAttribute("command") UserCommand cammand,Model model){
+       try{ 
+           if(userService.getUserByLoginName(cammand.getUser().getLoginName())!= null){
+            model.addAttribute("error","Username is registred! Please select another Username");
+            
+            return "reg_form";
+        }
+       }catch(Exception e){
+        User user = cammand.getUser();
+        user.setRole(UserService.ROLE_USER);
+        user.setLoginStatus(UserService.LOGIN_STATUS_ACTIVE);
+        userService.userRegister(cammand.getUser());
+       }
+        
+        
+        return "redirect:index?act=reg";
+        
     }
     
     

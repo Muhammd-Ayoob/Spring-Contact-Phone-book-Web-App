@@ -73,11 +73,18 @@ public class ContactServiceImpl implements ContactService{
 
     @Override
     public List<Contact> findUserContact(Integer userId, String text) {
-        String query="select from conatct where userId=? and(name like('%"+text+"%' or email like('%"+text+"%' or address like('%"+text+"%' or phone like('%"+text+"%' or remark like('%"+text+"%')";
+        String query="SELECT contactId, userId, name, phone, email, address, remark FROM contact WHERE userId=? AND (name LIKE '%"+text+"%' OR remark LIKE '%"+text+"%' OR phone LIKE '%"+text+"%' OR email LIKE '%"+text+"%' OR address LIKE '%"+text+"%')";
         
-        List<Contact> list = jdbcTemplate.query(query, new ContactRowMapperImpl());
+        
+        List<Contact> list = jdbcTemplate.query(query, new ContactRowMapperImpl(),userId);
         
         return list;
+    }
+
+    @Override
+    public Contact findById(Integer id) {
+       
+        return contactDao.findById(id);
     }
     
 }

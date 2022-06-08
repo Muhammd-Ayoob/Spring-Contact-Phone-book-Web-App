@@ -26,4 +26,6 @@ public interface UserService {
     public List<User> getUsers();
     
     public void chanLoginStatus(Integer userId, Integer loginStatus);
+    
+    public User getUserByLoginName(String loginName);
 }

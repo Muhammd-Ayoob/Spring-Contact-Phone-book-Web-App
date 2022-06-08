@@ -42,8 +42,17 @@
                     <c:if test="${error!=null}">
                         <p class="error">${error}</p>
                     </c:if>
+                        
+                    <c:if test="${param.act eq 'lo'}">
+                        <p class="success">Logout successfully! Thanks for using the contact Application</p>
+                    </c:if>
+                        
+                    <c:if test="${param.act eq 'reg'}">
+                        <p class="success">User Registered Successfully! Please login</p>
+                    </c:if>
                     <s:url var="user_login" value="/login"></s:url>
                     <f:form action="${user_login}" modelAttribute="command">
+                        
                         <table border="1">
                             <tr>
                                 <td>Username</td>
@@ -61,8 +70,9 @@
                                 <f:button>Login</f:button><br>
                                     <a href="#">New User Registration</a>
                                 </td>
-                                
+                    
                             </tr>
+                            
                         </table>
                     </f:form>
                 </td>

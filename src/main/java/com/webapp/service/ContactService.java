@@ -15,5 +15,6 @@ public interface ContactService {
     public void delete(Integer[] ids);
     public List<Contact> findUserContact(Integer userId);
     public List<Contact> findUserContact(Integer userId, String text);
+    public Contact findById(Integer id);
     
 }

@@ -1,6 +1,7 @@
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\dao\UserDAOImpl.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\service\UserService.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\model\Contact.java
+D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\command\UserCommand.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\controller\TestController.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\util\StringUtil.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\command\LoginCommand.java
@@ -19,3 +20,4 @@ D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\controller\UserContro
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\config\SpringWebConfig.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\dao\BaseDAO.java
 D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\service\ContactService.java
+D:\Spring-MVC\SpringContactWebApp\src\main\java\com\webapp\controller\ContactController.java

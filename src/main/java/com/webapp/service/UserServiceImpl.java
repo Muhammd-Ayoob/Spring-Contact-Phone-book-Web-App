@@ -58,4 +58,19 @@ public class UserServiceImpl implements UserService{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    /**
+     *
+     * @param loginName
+     * @return
+     */
+    @Override
+    public User getUserByLoginName(String loginName){
+        
+         String query="select *from user where loginName=?";
+         
+         User user= jdbcTemplate.queryForObject(query,new UserRowMapperImpl(), loginName);
+         
+         return user;
+    }
+    
 }
