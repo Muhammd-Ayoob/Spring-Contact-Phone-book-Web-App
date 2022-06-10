@@ -50,12 +50,16 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public List<User> getUsers() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        return userDao.findByProperty("role", UserService.ROLE_USER);
     }
 
     @Override
     public void chanLoginStatus(Integer userId, Integer loginStatus) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+  
+        String query="update user set loginStatus=? where userId=?";
+        
+        jdbcTemplate.update(query, loginStatus, userId);
     }
     
     /**

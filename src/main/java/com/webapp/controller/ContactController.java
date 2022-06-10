@@ -99,4 +99,14 @@ public class ContactController {
         return "contact_list";
     }
     
+    
+    
+            
+    @RequestMapping("/bulk_delete")
+    public String deleteBulkContact(@RequestParam("cId") Integer[] ids){
+        
+        service.delete(ids);
+        
+        return "redirect:contact_list?act=del";
+    }
 }

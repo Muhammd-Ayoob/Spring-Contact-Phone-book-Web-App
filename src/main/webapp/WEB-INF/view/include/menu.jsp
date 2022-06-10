@@ -13,6 +13,9 @@
 
 <s:url var="clist" value="/contact_list"></s:url>
 
+<s:url var="users" value="/users_list"></s:url>
+
+
     
 <c:if test="${sessionScope.userId==null}">
     
@@ -20,7 +23,7 @@
 </c:if>
     <c:if test="${sessionScope.userId!=null && sessionScope.role==1}">
     
-    <a href="#">Home</a> | <a href="#">User List</a> | <a href="${logout_url}">Logout</a>
+    <a href="#">Home</a> | <a href="${users}">User List</a> | <a href="${logout_url}">Logout</a>
 </c:if>
 
 <c:if test="${sessionScope.userId!=null && sessionScope.role==2}">

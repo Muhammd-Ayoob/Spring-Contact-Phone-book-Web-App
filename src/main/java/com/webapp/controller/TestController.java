@@ -4,8 +4,10 @@
  */
 package com.webapp.controller;
 
+import java.util.Date;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -14,8 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class TestController {
     
-    @RequestMapping("/home")
+    @RequestMapping("/test")
     public String home(){
-        return "home";
+        return "test";
+    }
+    
+    @RequestMapping("/time")
+    @ResponseBody
+    public String getTime(){
+        Date date= new Date();
+        
+       return date.toString();
     }
 }

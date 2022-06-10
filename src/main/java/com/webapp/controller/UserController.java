@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  *
@@ -107,6 +109,25 @@ public class UserController {
         
         return "redirect:index?act=reg";
         
+    }
+    
+    @RequestMapping("/users_list")
+    public String getUsers(Model model){
+        model.addAttribute("usersList", userService.getUsers());
+        return "users_list";
+    }
+    
+    @RequestMapping("/change_status")
+    @ResponseBody
+    public String changeStatus(@RequestParam Integer userId, @RequestParam Integer lStatus){
+        try{
+            System.out.println("HELLO WORLD");
+        userService.chanLoginStatus(userId, lStatus);
+        return "success: Login status changed";
+        }
+        catch(Exception exception){
+                return "Error: Failed to change the status";
+        }
     }
     
     

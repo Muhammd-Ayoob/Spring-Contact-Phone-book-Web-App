@@ -3,11 +3,9 @@
     Created on : Jun 4, 2022, 10:02:24 PM
     Author     : Muhammad Ayoob Bugti
 */
-h1{color: green;}
 body{
     font-family: Arial, Helvetica, Geneva, sans-serif;
     font-size: 18px;
-    color: #0000FF;
 }
 
 .error{

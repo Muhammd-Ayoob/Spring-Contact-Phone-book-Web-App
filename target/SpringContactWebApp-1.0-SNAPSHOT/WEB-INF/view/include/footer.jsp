@@ -1,1 +1,1 @@
-&COPY;[2018-2022] Copyrights by <a target="_blank" href="/mayoobbughti@gamil.com">Muhammad Ayoob bugti</a>
+&COPY;[2018-2022] Copyrights by <a target="_blank" href="https://www.facebook.com/ayoob.bugti.39">Muhammad Ayoob bugti</a>
